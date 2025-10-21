@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adewale Saheed - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Added navigation for multi-page app -->
+  <nav class="main-nav" aria-label="Main navigation">
+    <ul class="nav-links">
+      <li><a href="#" data-page="profile" class="nav-link active">Profile</a></li>
+      <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+      <li><a href="#" data-page="about" class="nav-link">About Me</a></li>
+    </ul>
+  </nav>
+
+  <main id="app-container">
+    <!-- Profile Page -->
+    <div id="profile-page" class="page active">
+      <article data-testid="test-profile-card" class="profile-card" aria-label="User Profile Card">
+        <header class="profile-header">
+          <figure class="avatar">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-08%20at%2019.56.03_b44c7cfc-TCXPWM1rQuYbY3oOrzfUs1tTvvxghB.jpg"
+              alt="Adewale Saheed professional headshot"
+              data-testid="test-user-avatar"
+            />
+          </figure>
+          <div class="user-info">
+            <h2 data-testid="test-user-name">Adewale Saheed</h2>
+            <p data-testid="test-user-bio">
+              Frontend developer passionate about accessibility, design systems.
+            </p>
+          </div>
+        </header>
+
+        <section class="user-time">
+          <strong>Current Time (ms):</strong>
+          <span data-testid="test-user-time" id="user-time"></span>
+        </section>
+
+        <nav aria-label="Social links" data-testid="test-user-social-links">
+          <ul class="social-links">
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">Twitter</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">LinkedIn</a></li>
+          </ul>
+        </nav>
+
+        <section aria-labelledby="hobbies-title">
+          <h3 id="hobbies-title">Hobbies</h3>
+          <ul data-testid="test-user-hobbies">
+            <li>Football</li>
+            <li>Photography</li>
+            <li>Cooking</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="dislikes-title">
+          <h3 id="dislikes-title">Dislikes</h3>
+          <ul data-testid="test-user-dislikes">
+            <li>Procrastination</li>
+            <li>Slow wifi</li>
+          </ul>
+        </section>
+      </article>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div id="contact-page" class="page">
+      <article class="form-card" aria-label="Contact form">
+        <h1>Contact Us</h1>
+        <form id="contact-form" data-testid="test-contact-form" novalidate>
+          <!-- Full Name Field -->
+          <div class="form-group">
+            <label for="contact-name">Full Name <span aria-label="required">*</span></label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              data-testid="test-contact-name"
+              required
+              aria-describedby="error-name"
+            />
+            <div id="error-name" class="error-message" data-testid="test-contact-error-name" role="alert"></div>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="contact-email">Email <span aria-label="required">*</span></label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              data-testid="test-contact-email"
+              required
+              aria-describedby="error-email"
+            />
+            <div id="error-email" class="error-message" data-testid="test-contact-error-email" role="alert"></div>
+          </div>
+
+          <!-- Subject Field -->
+          <div class="form-group">
+            <label for="contact-subject">Subject <span aria-label="required">*</span></label>
+            <input
+              type="text"
+              id="contact-subject"
+              name="subject"
+              data-testid="test-contact-subject"
+              required
+              aria-describedby="error-subject"
+            />
+            <div id="error-subject" class="error-message" data-testid="test-contact-error-subject" role="alert"></div>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="contact-message">Message <span aria-label="required">*</span></label>
+            <textarea
+              id="contact-message"
+              name="message"
+              data-testid="test-contact-message"
+              rows="5"
+              required
+              aria-describedby="error-message"
+            ></textarea>
+            <div id="error-message" class="error-message" data-testid="test-contact-error-message" role="alert"></div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" data-testid="test-contact-submit" class="submit-btn">Send Message</button>
+
+          <!-- Success Message -->
+          <div id="success-message" class="success-message" data-testid="test-contact-success" role="status" aria-live="polite"></div>
+        </form>
+      </article>
+    </div>
+
+    <!-- About Me Page -->
+    <div id="about-page" class="page">
+      <main data-testid="test-about-page" class="about-card">
+        <h1>About Me</h1>
+
+        <section aria-labelledby="bio-title">
+          <h2 id="bio-title">Bio</h2>
+          <p data-testid="test-about-bio">
+            I'm Adewale Saheed, a passionate frontend developer with a keen interest in building accessible and user-friendly web applications. I believe that great design and clean code go hand in hand. With experience in modern web technologies, I'm committed to creating digital experiences that are both beautiful and functional.
+          </p>
+        </section>
+
+        <section aria-labelledby="goals-title">
+          <h2 id="goals-title">Goals in This Program</h2>
+          <ul data-testid="test-about-goals">
+            <li>Master semantic HTML and accessibility best practices</li>
+            <li>Build responsive, mobile-first web applications</li>
+            <li>Develop strong JavaScript fundamentals</li>
+            <li>Create maintainable and scalable code</li>
+            <li>Understand design systems and component architecture</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="confidence-title">
+          <h2 id="confidence-title">Areas of Low Confidence</h2>
+          <ul data-testid="test-about-confidence">
+            <li>Advanced CSS animations and transitions</li>
+            <li>Performance optimization techniques</li>
+            <li>Testing and debugging complex applications</li>
+            <li>Backend integration and API design</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="future-title">
+          <h2 id="future-title">Note to Future Self</h2>
+          <p data-testid="test-about-future-note">
+            Remember that every expert was once a beginner. Don't rush through the fundamentals—they are the foundation of everything you'll build. Stay curious, ask questions, and celebrate small wins. The journey of learning to code is a marathon, not a sprint. Keep pushing forward, and trust the process.
+          </p>
+        </section>
+
+        <section aria-labelledby="extra-title">
+          <h2 id="extra-title">Extra Thoughts</h2>
+          <p data-testid="test-about-extra">
+            I'm excited about the future of web development and the endless possibilities it offers. Whether it's building tools that help people, creating beautiful user interfaces, or solving complex problems, I'm ready to take on new challenges. This program is a stepping stone toward becoming a better developer and contributing meaningfully to the tech community.
+          </p>
+        </section>
+      </main>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
